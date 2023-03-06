@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Laboratory3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory3Form.Designer.cs">
+      <DependentUpon>Laboratory3Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Laboratory2Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laboratory2Form.Designer.cs">
       <DependentUpon>Laboratory2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory3TitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory3TitleForm.Designer.cs">
+      <DependentUpon>Laboratory3TitleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratory2TitleForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +90,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Laboratory3Form.resx">
+      <DependentUpon>Laboratory3Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Laboratory2Form.resx">
       <DependentUpon>Laboratory2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory3TitleForm.resx">
+      <DependentUpon>Laboratory3TitleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratory2TitleForm.resx">
       <DependentUpon>Laboratory2TitleForm.cs</DependentUpon>
@@ -123,6 +141,10 @@
     <ProjectReference Include="..\Laboratory2Library\Laboratory2Library.csproj">
       <Project>{b9cc035c-5603-43ef-8a29-4042e40567cc}</Project>
       <Name>Laboratory2Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Laboratory3Library\Laboratory3Library.csproj">
+      <Project>{d74bbb9d-8f5d-4aa4-aaca-16259211ab6f}</Project>
+      <Name>Laboratory3Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

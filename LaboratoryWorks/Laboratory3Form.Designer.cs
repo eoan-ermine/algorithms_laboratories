@@ -47,7 +47,7 @@
             this.x = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.y = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
-            this.sumOutput = new System.Windows.Forms.TextBox();
+            this.minOutput = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOutput)).BeginInit();
             this.SuspendLayout();
@@ -232,24 +232,24 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(628, 449);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(185, 16);
+            this.label8.Size = new System.Drawing.Size(168, 16);
             this.label8.TabIndex = 46;
-            this.label8.Text = "Сумма значений (при y > 0):";
+            this.label8.Text = "Минимальное значение:";
             // 
-            // sumOutput
+            // minOutput
             // 
-            this.sumOutput.Location = new System.Drawing.Point(820, 446);
-            this.sumOutput.Margin = new System.Windows.Forms.Padding(4);
-            this.sumOutput.Name = "sumOutput";
-            this.sumOutput.Size = new System.Drawing.Size(147, 22);
-            this.sumOutput.TabIndex = 47;
+            this.minOutput.Location = new System.Drawing.Point(803, 446);
+            this.minOutput.Margin = new System.Windows.Forms.Padding(4);
+            this.minOutput.Name = "minOutput";
+            this.minOutput.Size = new System.Drawing.Size(147, 22);
+            this.minOutput.TabIndex = 47;
             // 
             // Laboratory3Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 607);
-            this.Controls.Add(this.sumOutput);
+            this.Controls.Add(this.minOutput);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.gridOutput);
             this.Controls.Add(this.hInput);
@@ -297,6 +297,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn x;
         private System.Windows.Forms.DataGridViewTextBoxColumn y;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox sumOutput;
+        private System.Windows.Forms.TextBox minOutput;
     }
 }

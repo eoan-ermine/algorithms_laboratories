@@ -30,8 +30,9 @@ namespace LaboratoryWorks
             double b = Laboratory3.GetDouble(bInput);
             double h = Laboratory3.GetDouble(hInput);
 
-            double sum = Laboratory3.TabulateFunction(a, b, h, gridOutput);
-            Laboratory3.OutputDouble(sumOutput, sum);
+            gridOutput.Rows.Clear();
+            double min = Laboratory3.TabulateFunction(a, b, h, gridOutput);
+            Laboratory3.OutputDouble(minOutput, min);
         }
     }
 }

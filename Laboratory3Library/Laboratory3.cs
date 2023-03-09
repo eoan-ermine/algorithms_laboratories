@@ -23,18 +23,18 @@ namespace Laboratory3Library
         }
         public static double TabulateFunction(double a, double b, double h, DataGridView view)
         {
-            double sum = 0;
+            double min = Double.MaxValue;
             double x = a;
             int n = Convert.ToInt32(Math.Round((b - a) / h + 1));
 
             for (int i = 1; i <= n; ++i, x += h)
             {
                 double y = Laboratory3.CalculateExpression(x);
-                if (y > 0) sum += y;
+                if (y < min) min = y;
                 Laboratory3.OutputViewRow(view, x, y);
             }
 
-            return sum;
+            return min;
         }
     }
 }

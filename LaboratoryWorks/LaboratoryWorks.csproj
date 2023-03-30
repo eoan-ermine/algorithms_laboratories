@@ -152,21 +152,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Laboratory1Library\Laboratory1Library.csproj">
+    <ProjectReference Include="..\Laboratory1Library\LaboratoryWorksLibrary.csproj">
       <Project>{b9243cd2-844d-4fe7-b007-538fc21e20fc}</Project>
-      <Name>Laboratory1Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Laboratory2Library\Laboratory2Library.csproj">
-      <Project>{b9cc035c-5603-43ef-8a29-4042e40567cc}</Project>
-      <Name>Laboratory2Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Laboratory3Library\Laboratory3Library.csproj">
-      <Project>{d74bbb9d-8f5d-4aa4-aaca-16259211ab6f}</Project>
-      <Name>Laboratory3Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Laboratory4Library\Laboratory4Library.csproj">
-      <Project>{dd64c933-917b-4f85-aeb1-be0570bf2fb6}</Project>
-      <Name>Laboratory4Library</Name>
+      <Name>LaboratoryWorksLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

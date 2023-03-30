@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Laboratory2Library;
+using LaboratoryWorksLibrary;
 
-namespace LaboratoryWorks
+namespace LaboratoryWorksGUI
 {
     public partial class Laboratory2Form : Form
     {
@@ -26,13 +26,13 @@ namespace LaboratoryWorks
 
         private void evaluateButton_Click(object sender, EventArgs e)
         {
-            double a = Laboratory2.GetDouble(aInput);
-            double b = Laboratory2.GetDouble(bInput);
-            double x = Laboratory2.GetDouble(xInput);
-            double y = Laboratory2.GetDouble(yInput);
+            double a = LaboratoryWorks.GetDouble(aInput);
+            double b = LaboratoryWorks.GetDouble(bInput);
+            double x = LaboratoryWorks.GetDouble(xInput);
+            double y = LaboratoryWorks.GetDouble(yInput);
 
-            double result = Laboratory2.Evaluate(a, b, x, y);
-            Laboratory2.OutputDouble(cOutput, result);
+            double result = LaboratoryWorks.Evaluate(a, b, x, y);
+            LaboratoryWorks.OutputDouble(cOutput, result);
         }
     }
 }

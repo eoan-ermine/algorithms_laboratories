@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Laboratory4Library;
+using LaboratoryWorksLibrary;
 
-namespace LaboratoryWorks
+namespace LaboratoryWorksGUI
 {
     public partial class Laboratory4Form : Form
     {
@@ -26,12 +26,12 @@ namespace LaboratoryWorks
 
         private void evaluateButton_Click(object sender, EventArgs e)
         {
-            double epsilon = Laboratory4.GetDouble(eInput);
-            double y_0 = Laboratory4.GetDouble(yInput);
+            double epsilon = LaboratoryWorks.GetDouble(eInput);
+            double y_0 = LaboratoryWorks.GetDouble(yInput);
 
             gridOutput.Rows.Clear();
-            double y = Laboratory4.TabulateFunction(gridOutput, y_0, epsilon);
-            Laboratory4.OutputDouble(yOutput, y);
+            double y = LaboratoryWorks.TabulateSequence(gridOutput, y_0, epsilon);
+            LaboratoryWorks.OutputDouble(yOutput, y);
         }
     }
 }

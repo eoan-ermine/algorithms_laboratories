@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LaboratoryWorks
+namespace LaboratoryWorksGUI
 {
     public partial class Laboratory4TitleForm : Form
     {

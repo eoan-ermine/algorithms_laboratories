@@ -1,4 +1,4 @@
-﻿namespace LaboratoryWorks
+﻿namespace LaboratoryWorksGUI
 {
     partial class Laboratory2TitleForm
     {

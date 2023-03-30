@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaboratoryWorks", "LaboratoryWorks\LaboratoryWorks.csproj", "{48D9D567-B607-4E6F-BAA4-0EF0C72F47CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaboratoryWorksLibrary", "Laboratory1Library\LaboratoryWorksLibrary.csproj", "{B9243CD2-844D-4FE7-B007-538FC21E20FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaboratoryWorksLibrary", "LaboratoryWorksLibrary\LaboratoryWorksLibrary.csproj", "{B9243CD2-844D-4FE7-B007-538FC21E20FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

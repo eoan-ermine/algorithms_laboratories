@@ -152,7 +152,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Laboratory1Library\LaboratoryWorksLibrary.csproj">
+    <ProjectReference Include="..\LaboratoryWorksLibrary\LaboratoryWorksLibrary.csproj">
       <Project>{b9243cd2-844d-4fe7-b007-538fc21e20fc}</Project>
       <Name>LaboratoryWorksLibrary</Name>
     </ProjectReference>

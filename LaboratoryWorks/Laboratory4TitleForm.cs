@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LaboratoryWorks
 {
-    public partial class TitleForm : Form
+    public partial class Laboratory4TitleForm : Form
     {
-        public TitleForm()
+        public Laboratory4TitleForm()
         {
             InitializeComponent();
         }
@@ -25,29 +25,14 @@ namespace LaboratoryWorks
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Laboratory1TitleForm nextForm = new Laboratory1TitleForm();
+            TitleForm nextForm = new TitleForm();
             nextForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Laboratory2TitleForm nextForm = new Laboratory2TitleForm();
-            nextForm.Show();
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Laboratory3TitleForm nextForm = new Laboratory3TitleForm();
-            nextForm.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Laboratory4TitleForm nextForm = new Laboratory4TitleForm();
+            Laboratory4Form nextForm = new Laboratory4Form();
             nextForm.Show();
         }
     }

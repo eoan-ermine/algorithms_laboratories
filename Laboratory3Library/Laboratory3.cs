@@ -27,11 +27,12 @@ namespace Laboratory3Library
             double x = a;
             int n = Convert.ToInt32(Math.Round((b - a) / h + 1));
 
-            for (int i = 1; i <= n; ++i, x += h)
+            for (int i = 1; i <= n; ++i)
             {
                 double y = Laboratory3.CalculateExpression(x);
                 if (y < min) min = y;
                 Laboratory3.OutputViewRow(view, x, y);
+                x += h;
             }
 
             return min;

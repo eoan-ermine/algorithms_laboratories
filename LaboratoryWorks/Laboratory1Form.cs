@@ -24,7 +24,7 @@ namespace LaboratoryWorksGUI
             nextForm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void evaluateButton_Click(object sender, EventArgs e)
         {
             double x = LaboratoryWorks.GetDouble(xInput);
             double y = LaboratoryWorks.GetDouble(yInput);

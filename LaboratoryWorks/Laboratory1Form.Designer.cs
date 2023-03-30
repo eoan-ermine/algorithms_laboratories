@@ -210,7 +210,7 @@
             this.evaluateButton.TabIndex = 28;
             this.evaluateButton.Text = "Вычислить";
             this.evaluateButton.UseVisualStyleBackColor = true;
-            this.evaluateButton.Click += new System.EventHandler(this.button2_Click);
+            this.evaluateButton.Click += new System.EventHandler(this.evaluateButton_Click);
             // 
             // Laboratory1Form
             // 

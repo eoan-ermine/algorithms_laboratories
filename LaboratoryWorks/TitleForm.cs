@@ -50,5 +50,12 @@ namespace LaboratoryWorksGUI
             Laboratory4TitleForm nextForm = new Laboratory4TitleForm();
             nextForm.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Laboratory5TitleForm nextForm = new Laboratory5TitleForm();
+            nextForm.Show();
+        }
     }
 }

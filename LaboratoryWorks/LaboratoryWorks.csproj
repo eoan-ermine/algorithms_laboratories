@@ -52,11 +52,23 @@
     <Compile Include="Laboratory3Form.Designer.cs">
       <DependentUpon>Laboratory3Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laboratory5Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory5Form.Designer.cs">
+      <DependentUpon>Laboratory5Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Laboratory4Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laboratory4Form.Designer.cs">
       <DependentUpon>Laboratory4Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory5TitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory5TitleForm.Designer.cs">
+      <DependentUpon>Laboratory5TitleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratory4TitleForm.cs">
       <SubType>Form</SubType>
@@ -102,8 +114,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Laboratory5Form.resx">
+      <DependentUpon>Laboratory5Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Laboratory4Form.resx">
       <DependentUpon>Laboratory4Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory5TitleForm.resx">
+      <DependentUpon>Laboratory5TitleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratory4TitleForm.resx">
       <DependentUpon>Laboratory4TitleForm.cs</DependentUpon>

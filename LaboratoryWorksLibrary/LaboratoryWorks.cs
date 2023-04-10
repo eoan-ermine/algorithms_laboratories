@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace LaboratoryWorksLibrary
@@ -108,6 +109,54 @@ namespace LaboratoryWorksLibrary
             }
 
             return current;
+        }
+
+        /* Пятая лабораторная работа */
+        public static int GetInt(TextBox t)
+        {
+            return Convert.ToInt32(t.Text);
+        }
+
+        public static void GenerateArray(int[] array, int length, int a, int b)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i != length; ++i)
+                array[i] = rnd.Next(a, b);
+        }
+
+        public static void OutputArray(DataGridView grid, int[] array, int length)
+        {
+            grid.ColumnCount = length;
+            grid.RowCount = 2;
+            for (int i = 0; i != length; ++i)
+            {
+                grid.Rows[0].Cells[i].Value = "[" + i + "]";
+                grid.Rows[1].Cells[i].Value = array[i];
+            }
+        }
+
+        public static void ArrayElementsSum(int[] array, int length, out int sum)
+        {
+            sum = 0;
+            for (int i = 0; i != length; ++i)
+                sum += array[i];
+        }
+
+        public static void CountElements(int[] array, int length, out int odd, out int even)
+        {
+            odd = 0;
+            even = 0;
+
+            for (int i = 0; i != length; ++i)
+                if (array[i] % 2 == 0)
+                    even += 1;
+                else
+                    odd += 1;
+        }
+
+        public static void OutputResult(int result)
+        {
+            MessageBox.Show("Ответ: " + result, "Ответ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +59,24 @@
     <Compile Include="Laboratory3Form.Designer.cs">
       <DependentUpon>Laboratory3Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Laboratory8Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory8Form.Designer.cs">
+      <DependentUpon>Laboratory8Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory7Form.Designer.cs">
+      <DependentUpon>Laboratory7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory6Form.Designer.cs">
+      <DependentUpon>Laboratory6Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Laboratory5Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +88,24 @@
     </Compile>
     <Compile Include="Laboratory4Form.Designer.cs">
       <DependentUpon>Laboratory4Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory8TitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory8TitleForm.Designer.cs">
+      <DependentUpon>Laboratory8TitleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory7TitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory7TitleForm.Designer.cs">
+      <DependentUpon>Laboratory7TitleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratory6TitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratory6TitleForm.Designer.cs">
+      <DependentUpon>Laboratory6TitleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Laboratory5TitleForm.cs">
       <SubType>Form</SubType>
@@ -114,11 +157,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Laboratory8Form.resx">
+      <DependentUpon>Laboratory8Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory7Form.resx">
+      <DependentUpon>Laboratory7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory6Form.resx">
+      <DependentUpon>Laboratory6Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Laboratory5Form.resx">
       <DependentUpon>Laboratory5Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratory4Form.resx">
       <DependentUpon>Laboratory4Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory8TitleForm.resx">
+      <DependentUpon>Laboratory8TitleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory7TitleForm.resx">
+      <DependentUpon>Laboratory7TitleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratory6TitleForm.resx">
+      <DependentUpon>Laboratory6TitleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratory5TitleForm.resx">
       <DependentUpon>Laboratory5TitleForm.cs</DependentUpon>
@@ -156,6 +217,7 @@
     <EmbeddedResource Include="TitleForm.resx">
       <DependentUpon>TitleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -174,6 +236,35 @@
       <Project>{b9243cd2-844d-4fe7-b007-538fc21e20fc}</Project>
       <Name>LaboratoryWorksLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

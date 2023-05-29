@@ -30,21 +30,29 @@ namespace LaboratoryWorksGUI
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            if (lengthInput.Text == "" || lengthInput.Text == "0")
+            int A, B;
+            try
             {
-                MessageBox.Show("Пожалуйста, введите корректное количество элементов", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lengthInput.Focus();
+                length = LaboratoryWorks.GetInt(lengthInput);
+                A = LaboratoryWorks.GetInt(aInput);
+                B = LaboratoryWorks.GetInt(bInput);
+            } 
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, введите число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (aInput.Text == "" || bInput.Text == "")
+            catch (OverflowException)
             {
-                MessageBox.Show("Пожалуйста, задайте корректные пределы", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Слишком большое (маленькое) число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            length = LaboratoryWorks.GetInt(lengthInput);
-            int A = LaboratoryWorks.GetInt(aInput);
-            int B = LaboratoryWorks.GetInt(bInput);
+            if (length <= 0)
+            {
+                MessageBox.Show("Длина массива должна быть положительной", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             array = new int[length];
 
@@ -67,23 +75,31 @@ namespace LaboratoryWorksGUI
                 return;
             }
 
+            int index;
             string userInput = Interaction.InputBox("Пожалуйста, введите индекс элемента для удаления", "Ввод", "0");
             try
             {
-                int index = Convert.ToInt32(userInput);
-                if (index < 0 || index >= length)
-                {
-                    MessageBox.Show("Введенный индекс лежит вне границ массива", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                LaboratoryWorks.RemoveElement(array, ref length, index);
-                LaboratoryWorks.OutputArray(outputView, array, length);
+                index = Convert.ToInt32(userInput);
             }
             catch (FormatException)
             {
-                MessageBox.Show("Пожалуйста, введите корректный индекс элемента для удаления", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Пожалуйста, введите число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Слишком большое (маленькое) число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (index < 0 || index >= length)
+            {
+                MessageBox.Show("Введенный индекс лежит вне границ массива", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            LaboratoryWorks.RemoveElement(array, ref length, index);
+            LaboratoryWorks.OutputArray(outputView, array, length);
         }
 
         private void monotonicButton_Click(object sender, EventArgs e)

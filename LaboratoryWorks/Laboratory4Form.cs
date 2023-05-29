@@ -26,8 +26,22 @@ namespace LaboratoryWorksGUI
 
         private void evaluateButton_Click(object sender, EventArgs e)
         {
-            double epsilon = LaboratoryWorks.GetDouble(eInput);
-            double y_0 = LaboratoryWorks.GetDouble(yInput);
+            double epsilon, y_0;
+            try
+            {
+                epsilon = LaboratoryWorks.GetDouble(eInput);
+                y_0 = LaboratoryWorks.GetDouble(yInput);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, введите число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Слишком большое (маленькое) число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             gridOutput.Rows.Clear();
             double y = LaboratoryWorks.TabulateSequence(gridOutput, y_0, epsilon);

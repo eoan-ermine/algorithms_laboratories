@@ -1,5 +1,6 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.parser;
 using System;
 using System.Data.OleDb;
 using System.IO;
@@ -498,6 +499,22 @@ namespace LaboratoryWorksLibrary
             }
         }
 
+        public static void RunAccessMacro()
+        {
+            // Находим директорию, в которой находится исполняемый файл
+            var location = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            var path = System.IO.Path.GetDirectoryName(location);
+
+            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+            app.Visible = true;
+            Microsoft.Office.Interop.Excel.Workbooks books = app.Workbooks;
+            Microsoft.Office.Interop.Excel._Workbook book = null;
+
+            book = books.Open(path + "\\output.xlsm");
+            app.Run((object)"Button1_Click");
+            app.ScreenUpdating = true;
+        }
+
         /* Восьмая лабораторная работа */
 
         public static void CreateMatrixTable(int columns)
@@ -672,6 +689,12 @@ namespace LaboratoryWorksLibrary
             xlButton.Text = "Отформатировать таблицу";
             xlButton.OnAction = "Button1_Click";
 
+            // Находим директорию, в которой находится исполняемый файл
+            var location = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            var path = System.IO.Path.GetDirectoryName(location);
+
+            // Сохраняем документ
+            workBook.SaveAs(path + "\\output.xlsm", (object)Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbookMacroEnabled);
             Excel.UserControl = true;
         }
 
@@ -717,8 +740,8 @@ namespace LaboratoryWorksLibrary
             Word.Visible = true;
         }
 
-        // Заполнение массива псевдослучайными числами
-        public static void generateMatrix(int[,] matrix, int rows, int columns)
+        // Заполнение двумерного массива псевдослучайными числами
+        public static void GenerateMatrix(int[,] matrix, int rows, int columns)
         {
             // Инициализация генератора случайных чисел
             Random random = new Random();
@@ -732,7 +755,7 @@ namespace LaboratoryWorksLibrary
         }
 
         // Вывод массива в компонент DataGridView
-        public static void outputMatrix(DataGridView view, int[,] matrix, int rows, int columns)
+        public static void OutputMatrix(DataGridView view, int[,] matrix, int rows, int columns)
         {
             // Очистка компонента от предыдущего содержания
             view.Columns.Clear();
@@ -766,8 +789,8 @@ namespace LaboratoryWorksLibrary
             }
         }
 
-        // Нахождение минимального четного (по значению) элемента в массиве
-        public static int? minimumEvenElement(int[,] matrix, int rows, int columns)
+        // Нахождение минимального четного (по значению) элемента в двумерном массиве
+        public static int? MinimumEvenElement(int[,] matrix, int rows, int columns)
         {
             int? minElement = null;
             for (int i = 0; i != rows; ++i)
@@ -785,8 +808,8 @@ namespace LaboratoryWorksLibrary
             return minElement;
         }
 
-        // Формирование массива по критерию: из чисел, больших минимального четного
-        public static void getArrayFromMatrix(int[,] matrix, int rows, int columns, int minElement, ref int[] array, ref int length)
+        // Формирование двумерного массива по критерию: из чисел, больших минимального четного
+        public static void GetArrayFromMatrix(int[,] matrix, int rows, int columns, int minElement, ref int[] array, ref int length)
         {
             array = new int[rows * columns];
             length = 0;

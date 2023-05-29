@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 
 using LaboratoryWorksLibrary;
-using System.Security.Cryptography;
 
 namespace LaboratoryWorksGUI
 {
@@ -65,17 +63,23 @@ namespace LaboratoryWorksGUI
         {
             try
             {
-                columns = Convert.ToInt32(columnsInput.Text);
-                rows = Convert.ToInt32(rowsInput.Text);
-            } catch (FormatException)
+                columns = LaboratoryWorks.GetInt(columnsInput);
+                rows = LaboratoryWorks.GetInt(rowsInput);
+            }
+            catch (FormatException)
             {
-                MessageBox.Show("Пожалуйста, введите корректное число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Пожалуйста, введите число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Слишком большое (маленькое) число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (columns <= 0 || rows <= 0 || columns > 25 || rows > 25)
             {
-                MessageBox.Show("Количество строк (столбцов) должно быть больше нуля и не превышать двадцати пяти", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Количество строк (столбцов) должно лежать в диапазоне от 1 до 25", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -83,8 +87,8 @@ namespace LaboratoryWorksGUI
             elements = null;
             sourceMatrix = new int[rows, columns];
 
-            //generateMatrix(sourceMatrix, rows, columns);
-            //outputMatrix(sourceView, sourceMatrix, rows, columns);
+            LaboratoryWorks.GenerateMatrix(sourceMatrix, rows, columns);
+            LaboratoryWorks.OutputMatrix(sourceView, sourceMatrix, rows, columns);
         }
 
         private void newButton_Click(object sender, EventArgs e)
@@ -92,7 +96,7 @@ namespace LaboratoryWorksGUI
             if (!assertMatrix() || !assertMinimum())
                 return;
 
-            //getArrayFromMatrix(sourceMatrix, rows, columns, (int) minElement, ref elements, ref length);
+            LaboratoryWorks.GetArrayFromMatrix(sourceMatrix, rows, columns, (int) minElement, ref elements, ref length);
 
             // Инициализация DataGridView
             resultView.ColumnCount = length;
@@ -155,8 +159,8 @@ namespace LaboratoryWorksGUI
             if (!assertMatrix())
                 return;
 
-            //minElement = minimumEvenElement(sourceMatrix, rows, columns);
-            //MessageBox.Show("Минимальный элемент среди четных элементов: " + minElement, "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            minElement = LaboratoryWorks.MinimumEvenElement(sourceMatrix, rows, columns);
+            MessageBox.Show("Минимальный элемент среди четных элементов: " + minElement, "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

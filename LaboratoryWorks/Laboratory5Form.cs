@@ -26,16 +26,23 @@ namespace LaboratoryWorksGUI
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            if (lengthInput.Text == "")
+            int length, A, B;
+            try
             {
-                MessageBox.Show("Пожалуйста, введите количество элементов", "Вывод", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                lengthInput.Focus();
+                length = LaboratoryWorks.GetInt(lengthInput);
+                A = LaboratoryWorks.GetInt(aInput);
+                B = LaboratoryWorks.GetInt(bInput);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Пожалуйста, введите число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
-            int length = LaboratoryWorks.GetInt(lengthInput);
-            int A = LaboratoryWorks.GetInt(aInput);
-            int B = LaboratoryWorks.GetInt(bInput);
+            catch (OverflowException)
+            {
+                MessageBox.Show("Слишком большое (маленькое) число", "Некорректный ввод", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             int[] array = new int[length];
 
